@@ -369,14 +369,19 @@
 }
 
 .hero-frame-primary img {
+  object-fit: contain;
   object-position: center center;
+  padding: clamp(0.7rem, 1.6vw, 1rem);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(98, 126, 255, 0.12), transparent 56%),
+    linear-gradient(180deg, rgba(7, 10, 23, 0.4), rgba(7, 10, 23, 0.2));
 }
 
 .hero-frame-primary {
   top: 3.2rem;
   right: 0;
   width: min(41rem, 92%);
-  height: 31rem;
+  aspect-ratio: 1.5 / 1;
 }
 
 .hero-frame-primary::after {
@@ -384,8 +389,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(10, 8, 26, 0) 0%, rgba(10, 8, 26, 0.15) 100%),
-    radial-gradient(circle at 50% 55%, rgba(124, 83, 255, 0.12), transparent 38%);
+    linear-gradient(180deg, rgba(10, 8, 26, 0) 0%, rgba(10, 8, 26, 0.08) 100%),
+    radial-gradient(circle at 50% 55%, rgba(124, 83, 255, 0.08), transparent 42%);
   pointer-events: none;
 }
 
@@ -742,7 +747,7 @@
 
   .hero-frame-primary {
     width: min(38rem, 88%);
-    height: 27rem;
+    aspect-ratio: 1.5 / 1;
   }
 
   .hero-frame-secondary {
@@ -842,7 +847,7 @@
     justify-self: stretch;
     width: 100%;
     height: auto;
-    aspect-ratio: 1.2 / 1;
+    aspect-ratio: 1.5 / 1;
     border-radius: 1.5rem;
   }
 
@@ -970,7 +975,7 @@
   }
 
   .hero-frame-primary {
-    aspect-ratio: 1.08 / 1;
+    aspect-ratio: 1.5 / 1;
   }
 
   .hero-frame-secondary {
