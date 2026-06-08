@@ -98,8 +98,6 @@
 .footer-meta,
 .form-note,
 .highlight-card p,
-.story-copy p,
-.story-points p,
 .audience-card p,
 .principle-card p,
 .community-copy p,
@@ -162,7 +160,7 @@
   grid-template-areas: 'copy visual';
   gap: 2.4rem;
   align-items: center;
-  padding: 4.8rem 0 3rem;
+  padding: 4.4rem 0 2.4rem;
 }
 
 .eyebrow,
@@ -196,7 +194,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .hero-copy h1 {
@@ -238,13 +236,11 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.3rem;
 }
 
 .highlight-card,
 .stat-card,
-.story-panel,
-.story-points article,
 .audience-card,
 .principle-card,
 .community-item,
@@ -441,7 +437,6 @@
   color: var(--color-muted);
 }
 
-.story-panel,
 .audience-card,
 .principle-card,
 .signup-card,
@@ -449,16 +444,10 @@
   border-radius: 2rem;
 }
 
-.story-panel,
-.audience-section,
-.principles-section,
+.overview-section,
 .community-section,
 .waitlist-section {
-  margin-top: 1.55rem;
-}
-
-.story-panel {
-  padding: 2rem;
+  margin-top: 1.15rem;
 }
 
 .section-intro {
@@ -466,7 +455,7 @@
 }
 
 .section-intro.narrow {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .section-intro h2,
@@ -480,7 +469,6 @@
   color: var(--color-muted);
 }
 
-.story-grid,
 .community-section,
 .waitlist-section {
   display: grid;
@@ -488,12 +476,6 @@
   gap: 1.5rem;
 }
 
-.story-copy {
-  display: grid;
-  gap: 1rem;
-}
-
-.story-copy p,
 .waitlist-copy p,
 .community-copy p,
 .audience-card p,
@@ -501,19 +483,20 @@
   margin: 0;
 }
 
-.story-points {
+.overview-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.story-points article,
+.overview-card,
 .audience-card,
 .principle-card {
   padding: 1.3rem;
   border-radius: 1.4rem;
 }
 
-.story-points h3,
+.overview-card h3,
 .audience-card h3,
 .principle-card h3,
 .collage-note h3,
@@ -523,19 +506,8 @@
   color: #f5f3ff;
 }
 
-.audience-grid,
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.principles-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .community-copy {
-  padding: 2rem 0.6rem 2rem 0;
+  padding: 1.3rem 0.4rem 1.3rem 0;
 }
 
 .community-list,
@@ -568,7 +540,7 @@
 .community-collage {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: 21rem auto;
+  grid-template-rows: 18rem auto;
   gap: 1rem;
 }
 
@@ -738,9 +710,7 @@
   }
 
   .hero-highlights,
-  .story-grid,
-  .audience-grid,
-  .principles-grid,
+  .overview-grid,
   .community-section,
   .waitlist-section,
   .community-collage {
@@ -756,7 +726,7 @@
   }
 
   .community-collage {
-    grid-template-rows: 19rem 16rem auto;
+    grid-template-rows: 17rem 14rem auto;
   }
 
   .collage-large {
@@ -909,7 +879,6 @@
     width: 104%;
   }
 
-  .story-panel,
   .signup-card {
     padding: 1.3rem;
   }
@@ -994,8 +963,7 @@
   }
 
   .stat-card,
-  .story-panel,
-  .story-points article,
+  .overview-card,
   .audience-card,
   .principle-card,
   .community-item,
@@ -1007,7 +975,7 @@
 
   .highlight-card,
   .stat-card,
-  .story-points article,
+  .overview-card,
   .audience-card,
   .principle-card,
   .community-item,

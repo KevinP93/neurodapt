@@ -5,67 +5,60 @@ import './App.css'
 const heroHighlights = [
   {
     title: 'Calmer UX',
-    text: 'Low-friction interactions, clean language, and a mobile-first experience.',
+    text: 'Low-friction, mobile-first, and easy to read fast.',
   },
   {
     title: 'Community-shaped',
-    text: 'Built with feedback from families, students, and professionals from day one.',
+    text: 'Built with real feedback from day one.',
   },
   {
     title: 'Single-purpose focus',
-    text: 'A more intentional alternative to noisy, general-purpose productivity tools.',
+    text: 'A cleaner alternative to noisy productivity tools.',
   },
 ]
 
 const audienceCards = [
   {
     title: 'Parents of children aged 6-14',
-    text: 'Warm, practical support that feels safe for younger users and thoughtful for the adults guiding them.',
+    text: 'Warm, practical support that feels safe for younger users and reassuring for parents.',
   },
   {
     title: 'Students and young professionals',
-    text: 'A focused tool for routines, planning, and follow-through without the clutter that often comes with everyday apps.',
+    text: 'Focused support for routines, planning, and follow-through without the clutter.',
   },
 ]
 
 const valuePillars = [
   {
     title: 'Accessibility without labels',
-    text: 'Neurodapt is informed by lived experience of neurodiversity, but designed so more people can benefit from it.',
+    text: 'Informed by lived experience, designed to help more people benefit.',
   },
   {
     title: 'Simplicity you can feel',
-    text: 'Everything should feel clear, calm, intuitive, and easy to return to when the day gets busy.',
+    text: 'Clear, calm, and easy to return to when the day gets busy.',
   },
   {
     title: 'Built with, not just for',
-    text: 'Co-development is part of the product process and part of the trust the brand is trying to build.',
+    text: 'Co-development is part of the product, not just the marketing.',
   },
 ]
 
 const communityMoments = [
-  'Real-world co-development sessions with children, families, and educators.',
-  'A growing digital community feeding back on messaging, experience, and priorities.',
-  'A pre-launch waitlist designed to bring supporters into the journey before Kickstarter goes live.',
+  'Co-development sessions with children, families, and educators.',
+  'A growing community shaping messaging, priorities, and product direction.',
+  'A waitlist that brings early supporters into the journey before Kickstarter.',
 ]
 
 const waitlistBenefits = [
-  'Early product updates and launch milestones',
-  'Behind-the-scenes co-development notes',
+  'Launch updates',
+  'Co-development notes',
   'First notice when Kickstarter goes live',
-]
-
-const stats = [
-  { value: '2,000-3,000', label: 'waitlist target in 3 months' },
-  { value: 'Late Q3 2026', label: 'Kickstarter launch target' },
-  { value: 'Mobile-first', label: 'social traffic expected' },
 ]
 
 function App() {
   const [formData, setFormData] = useState({
     email: '',
     audience: '',
-    challenge: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
@@ -111,7 +104,6 @@ function App() {
     setFormData({
       email: '',
       audience: '',
-      challenge: '',
     })
   }
 
@@ -136,8 +128,7 @@ function App() {
         </a>
 
         <nav className="site-nav" aria-label="Primary">
-          <a href="#story">Story</a>
-          <a href="#audiences">Audiences</a>
+          <a href="#story">Why it works</a>
           <a href="#community">Community</a>
           <a href="#waitlist">Waitlist</a>
         </nav>
@@ -157,16 +148,14 @@ function App() {
 
               <h1>Keeping you on track, wherever you go.</h1>
 
-              <p className="hero-lead">
-                Neurodapt is building a calmer, more focused way to support
-                planning, organisation, and everyday follow-through.
-              </p>
+            <p className="hero-lead">
+              Neurodapt is building a calmer, more focused way to support
+              planning, organisation, and everyday follow-through.
+            </p>
 
-              <p className="hero-support">
-                Designed from lived experience. Shaped with real users. Built to
-                feel accessible, warm, modern, and genuinely useful from the
-                first tap.
-              </p>
+            <p className="hero-support">
+              Designed from lived experience and shaped with real users.
+            </p>
 
               <div className="hero-actions">
                 <a className="button button-primary" href="#waitlist">
@@ -239,92 +228,26 @@ function App() {
           </div>
         </section>
 
-        <section className="section stats-strip reveal reveal-delay-2">
-          {stats.map((item) => (
-            <article className="stat-card" key={item.label}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </article>
-          ))}
-        </section>
-
-        <section className="section story-panel" id="story">
-          <div className="section-intro">
-            <p className="eyebrow">The product need</p>
-            <h2>A simpler everyday, without the noise.</h2>
-          </div>
-
-          <div className="story-grid">
-            <div className="story-copy">
-              <p>
-                The core challenge is not just productivity. It is stress,
-                overwhelm, follow-through, confidence, and independence in the
-                middle of real life.
-              </p>
-              <p>
-                Neurodapt is positioning itself as a calmer alternative: a more
-                intentional experience for executive function support, without
-                turning the product into something clinical, stigmatised, or
-                overwhelming to use.
-              </p>
-              <p>
-                That means the website has to do more than explain a product. It
-                needs to make the brand feel trustworthy, emotionally intelligent,
-                and easy to engage with in seconds on mobile.
-              </p>
-            </div>
-
-            <div className="story-points">
-              <article>
-                <h3>Primary job</h3>
-                <p>
-                  Convert social traffic into waitlist sign-ups before launch.
-                </p>
-              </article>
-              <article>
-                <h3>Brand tension</h3>
-                <p>
-                  Speak to parents first, while still feeling relevant to young
-                  adults and professionals.
-                </p>
-              </article>
-              <article>
-                <h3>Experience standard</h3>
-                <p>
-                  Low cognitive load, fast access, responsive design, and
-                  accessible interactions throughout.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section audience-section" id="audiences">
+        <section className="section overview-section" id="story">
           <div className="section-intro narrow">
-            <p className="eyebrow">Who it is for</p>
-            <h2>Two audiences. One clear, credible experience.</h2>
+            <p className="eyebrow">Why it works</p>
+            <h2>Made to feel clear, calm, and genuinely useful.</h2>
             <p>
-              The site needs to hold a careful balance: warm enough for parents
-              and younger end users, but sharp enough to feel current for older
-              users looking for focused support.
+              A simpler alternative to overloaded productivity tools, designed
+              to work for families and focused adult users alike.
             </p>
           </div>
 
-          <div className="audience-grid">
+          <div className="overview-grid">
             {audienceCards.map((audience) => (
-              <article className="audience-card" key={audience.title}>
+              <article className="overview-card audience-card" key={audience.title}>
                 <p className="card-tag">Audience</p>
                 <h3>{audience.title}</h3>
                 <p>{audience.text}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="section principles-section">
-          <div className="principles-grid">
             {valuePillars.map((pillar) => (
-              <article className="principle-card" key={pillar.title}>
+              <article className="overview-card principle-card" key={pillar.title}>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.text}</p>
               </article>
@@ -337,9 +260,8 @@ function App() {
             <p className="eyebrow">Co-development</p>
             <h2>Built with the people it is meant to help.</h2>
             <p>
-              Community is not a marketing add-on here. It is part of the way
-              the product is being shaped, tested, and made trustworthy ahead of
-              launch.
+              Community is part of how the product is shaped and trusted ahead
+              of launch.
             </p>
 
             <div className="community-list">
@@ -377,9 +299,8 @@ function App() {
             <p className="eyebrow">Join early</p>
             <h2>Be part of what comes next.</h2>
             <p>
-              The waitlist is the centre of the pre-launch journey. It is where
-              early supporters can follow product progress, hear about milestones,
-              and be first to know when Kickstarter goes live.
+              Follow progress, hear key updates, and be first to know when
+              Kickstarter goes live.
             </p>
 
             <div className="benefits-list">
@@ -450,18 +371,6 @@ function App() {
                     <option value="Educator">Educator</option>
                     <option value="Supporter">Supporter</option>
                   </select>
-                </label>
-
-                <label htmlFor="challenge">
-                  What would you most like support with?
-                  <textarea
-                    id="challenge"
-                    name="challenge"
-                    rows="4"
-                    placeholder="Routines, planning, focus, follow-through..."
-                    value={formData.challenge}
-                    onChange={handleChange}
-                  />
                 </label>
 
                 <button className="button button-primary form-button" type="submit">
