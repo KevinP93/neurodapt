@@ -148,14 +148,14 @@ function App() {
 
               <h1>Keeping you on track, wherever you go.</h1>
 
-            <p className="hero-lead">
-              Neurodapt is building a calmer, more focused way to support
-              planning, organisation, and everyday follow-through.
-            </p>
+              <p className="hero-lead">
+                Neurodapt is building a calmer, more focused way to support
+                planning, organisation, and everyday follow-through.
+              </p>
 
-            <p className="hero-support">
-              Designed from lived experience and shaped with real users.
-            </p>
+              <p className="hero-support">
+                Designed from lived experience and shaped with real users.
+              </p>
 
               <div className="hero-actions">
                 <a className="button button-primary" href="#waitlist">
@@ -165,15 +165,6 @@ function App() {
                   See the story
                 </a>
               </div>
-            </div>
-
-            <div className="hero-highlights">
-              {heroHighlights.map((item) => (
-                <article className="highlight-card" key={item.title}>
-                  <p className="highlight-title">{item.title}</p>
-                  <p>{item.text}</p>
-                </article>
-              ))}
             </div>
           </div>
 
@@ -225,6 +216,15 @@ function App() {
                 <h2>Grounded in everyday reality.</h2>
               </div>
             </article>
+          </div>
+
+          <div className="hero-highlights reveal reveal-delay-2">
+            {heroHighlights.map((item) => (
+              <article className="highlight-card" key={item.title}>
+                <p className="highlight-title">{item.title}</p>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </section>
 

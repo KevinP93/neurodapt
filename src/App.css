@@ -163,7 +163,9 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  grid-template-areas: 'copy visual';
+  grid-template-areas:
+    'copy visual'
+    'highlights visual';
   width: 100%;
   max-width: 100%;
   gap: 2.4rem;
@@ -200,9 +202,7 @@
   grid-area: copy;
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  min-width: 0;
 }
 
 .hero-copy h1 {
@@ -214,6 +214,7 @@
 .hero-copy-main {
   display: grid;
   gap: 0;
+  min-width: 0;
 }
 
 .hero-lead {
@@ -241,10 +242,12 @@
 }
 
 .hero-highlights {
+  grid-area: highlights;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 1.3rem;
+  margin-top: 0;
+  min-width: 0;
 }
 
 .highlight-card,
@@ -284,6 +287,7 @@
   min-height: 44rem;
   max-width: 100%;
   overflow: hidden;
+  min-width: 0;
 }
 
 .hero-stage-glow {
@@ -508,6 +512,7 @@
 .principle-card {
   padding: 1.3rem;
   border-radius: 1.4rem;
+  min-width: 0;
 }
 
 .overview-card h3,
@@ -522,6 +527,7 @@
 
 .community-copy {
   padding: 1.3rem 0.4rem 1.3rem 0;
+  min-width: 0;
 }
 
 .community-list,
@@ -575,10 +581,12 @@
 
 .waitlist-copy {
   padding: 0.5rem 0.75rem 0.5rem 0;
+  min-width: 0;
 }
 
 .signup-card {
   padding: 1.5rem;
+  min-width: 0;
 }
 
 .waitlist-form,
@@ -659,6 +667,33 @@
   margin: 0;
 }
 
+.hero-copy h1,
+.hero-lead,
+.hero-support,
+.highlight-card p,
+.highlight-title,
+.hero-chip,
+.hero-chip strong,
+.hero-frame-secondary h2,
+.hero-frame-secondary p,
+.frame-copy h2,
+.section-intro h2,
+.section-intro p,
+.overview-card h3,
+.overview-card p,
+.community-copy h2,
+.community-copy p,
+.community-item p,
+.waitlist-copy h2,
+.waitlist-copy p,
+.benefit-item p,
+.success-panel h3,
+.success-panel p,
+.footer-title,
+.site-footer p {
+  overflow-wrap: anywhere;
+}
+
 .footer-meta {
   max-width: 23rem;
   text-align: right;
@@ -693,7 +728,8 @@
     grid-template-columns: 1fr;
     grid-template-areas:
       'copy'
-      'visual';
+      'visual'
+      'highlights';
   }
 
   .hero-copy h1 {
@@ -769,24 +805,19 @@
   }
 
   .hero {
-    grid-template-areas:
-      'copy-main'
-      'visual'
-      'highlights';
     gap: 1.1rem;
     padding-top: 2.9rem;
   }
 
   .hero-copy {
-    display: contents;
+    text-align: center;
   }
 
   .hero-copy-main {
-    grid-area: copy-main;
+    justify-items: center;
   }
 
   .hero-highlights {
-    grid-area: highlights;
     grid-template-columns: 1fr;
     gap: 0.75rem;
     margin-top: 0;
@@ -808,6 +839,7 @@
     top: auto;
     right: auto;
     grid-column: 1 / -1;
+    justify-self: stretch;
     width: 100%;
     height: auto;
     aspect-ratio: 1.2 / 1;
@@ -819,10 +851,12 @@
     position: relative;
     left: auto;
     bottom: auto;
+    justify-self: stretch;
     width: 100%;
     min-height: 0;
     padding: 0.95rem;
     border-radius: 1.2rem;
+    text-align: left;
   }
 
   .hero-frame-secondary h2 {
@@ -835,6 +869,7 @@
     right: auto;
     bottom: auto;
     display: block;
+    justify-self: stretch;
     width: 100%;
     height: auto;
     aspect-ratio: 0.95 / 1;
@@ -851,10 +886,12 @@
 
   .hero-chip {
     position: relative;
+    justify-self: stretch;
     padding: 0.72rem 0.8rem;
     max-width: none;
     min-height: 100%;
     border-radius: 1.05rem;
+    text-align: left;
   }
 
   .hero-chip strong {
@@ -960,6 +997,7 @@
 
   .hero-actions {
     gap: 0.7rem;
+    justify-content: center;
   }
 
   .hero-actions .button {
