@@ -150,30 +150,32 @@ function App() {
       <main id="top">
         <section className="hero section">
           <div className="hero-copy reveal">
-            <p className="eyebrow">
-              Pre-launch marketing hub | Kickstarter planned for late Q3 2026
-            </p>
+            <div className="hero-copy-main">
+              <p className="eyebrow">
+                Pre-launch marketing hub | Kickstarter planned for late Q3 2026
+              </p>
 
-            <h1>Keeping you on track, wherever you go.</h1>
+              <h1>Keeping you on track, wherever you go.</h1>
 
-            <p className="hero-lead">
-              Neurodapt is building a calmer, more focused way to support
-              planning, organisation, and everyday follow-through.
-            </p>
+              <p className="hero-lead">
+                Neurodapt is building a calmer, more focused way to support
+                planning, organisation, and everyday follow-through.
+              </p>
 
-            <p className="hero-support">
-              Designed from lived experience. Shaped with real users. Built to
-              feel accessible, warm, modern, and genuinely useful from the
-              first tap.
-            </p>
+              <p className="hero-support">
+                Designed from lived experience. Shaped with real users. Built to
+                feel accessible, warm, modern, and genuinely useful from the
+                first tap.
+              </p>
 
-            <div className="hero-actions">
-              <a className="button button-primary" href="#waitlist">
-                Join the waitlist
-              </a>
-              <a className="button button-ghost" href="#story">
-                See the story
-              </a>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#waitlist">
+                  Join the waitlist
+                </a>
+                <a className="button button-ghost" href="#story">
+                  See the story
+                </a>
+              </div>
             </div>
 
             <div className="hero-highlights">
