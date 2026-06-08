@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -39,6 +40,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: transparent;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {
