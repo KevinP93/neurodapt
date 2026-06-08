@@ -189,6 +189,11 @@
   color: #f5f3ff;
 }
 
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-copy h1 {
   max-width: 10.5ch;
   font-size: clamp(3.6rem, 7vw, 6.25rem);
@@ -213,6 +218,10 @@
   gap: 0.9rem;
   margin-top: 1.75rem;
   flex-wrap: wrap;
+}
+
+.hero-actions .button {
+  min-width: 10.5rem;
 }
 
 .hero-highlights {
@@ -332,6 +341,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero-frame-primary img {
+  object-position: center center;
 }
 
 .hero-frame-primary {
@@ -711,13 +724,35 @@
   }
 
   .hero-highlights,
-  .stats-strip,
   .story-grid,
   .audience-grid,
   .principles-grid,
   .community-section,
   .waitlist-section,
   .community-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-highlights {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 18rem);
+    overflow-x: auto;
+    gap: 0.85rem;
+    padding-bottom: 0.25rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .hero-highlights::-webkit-scrollbar {
+    display: none;
+  }
+
+  .highlight-card {
+    scroll-snap-align: start;
+  }
+
+  .stats-strip {
     grid-template-columns: 1fr;
   }
 
@@ -741,7 +776,9 @@
 
 @media (max-width: 720px) {
   .site-header {
+    margin-top: 0.7rem;
     padding: 0.8rem 0.9rem;
+    border-radius: 1.2rem;
   }
 
   .header-cta {
@@ -749,25 +786,27 @@
   }
 
   .hero {
-    padding-top: 4rem;
+    gap: 1.25rem;
+    padding-top: 2.9rem;
   }
 
   .hero-visual {
-    min-height: 33rem;
+    min-height: 29rem;
   }
 
   .hero-frame-primary {
-    top: 2.2rem;
+    top: 1.2rem;
     width: 100%;
-    height: 21rem;
+    height: 18.5rem;
+    border-radius: 1.5rem;
   }
 
   .hero-frame-secondary {
-    left: 0.4rem;
-    bottom: 4.5rem;
-    width: 13.5rem;
-    min-height: 11rem;
-    padding: 1rem;
+    left: 0;
+    bottom: 3.5rem;
+    width: min(13rem, 72%);
+    min-height: auto;
+    padding: 0.95rem;
   }
 
   .hero-frame-secondary h2 {
@@ -775,10 +814,7 @@
   }
 
   .hero-frame-tertiary {
-    right: 0.2rem;
-    bottom: 2.8rem;
-    width: 9.5rem;
-    height: 10.5rem;
+    display: none;
   }
 
   .frame-copy {
@@ -790,12 +826,22 @@
   }
 
   .hero-chip {
-    padding: 0.75rem 0.85rem;
-    max-width: 13rem;
+    padding: 0.72rem 0.8rem;
+    max-width: 12rem;
   }
 
   .hero-chip strong {
     font-size: 0.9rem;
+  }
+
+  .hero-chip-top {
+    top: 0.35rem;
+    left: 0;
+  }
+
+  .hero-chip-bottom {
+    right: 0;
+    bottom: 0.75rem;
   }
 
   .story-panel,
@@ -816,32 +862,86 @@
   }
 
   .hero {
-    gap: 1.5rem;
+    gap: 1.1rem;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.9rem, 17vw, 4.2rem);
+    font-size: clamp(2.65rem, 15vw, 3.85rem);
   }
 
   .hero-lead {
-    font-size: 1.06rem;
+    font-size: 1rem;
+  }
+
+  .hero-support {
+    font-size: 0.95rem;
   }
 
   .hero-visual {
-    min-height: 29rem;
+    min-height: 22rem;
   }
 
   .hero-frame-primary {
-    height: 18rem;
+    top: 0.9rem;
+    height: 15.5rem;
   }
 
   .hero-frame-secondary {
-    width: 11.5rem;
-    min-height: 9.8rem;
+    display: none;
+  }
+
+  .hero-chip {
+    max-width: 10.25rem;
+    border-radius: 1rem;
+  }
+
+  .hero-chip span {
+    font-size: 0.72rem;
+  }
+
+  .hero-chip strong {
+    font-size: 0.82rem;
+  }
+
+  .hero-chip-bottom {
+    bottom: 0.2rem;
   }
 
   .hero-frame-tertiary {
     display: none;
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-highlights {
+    grid-auto-columns: minmax(13.5rem, 82vw);
+    margin-top: 1.35rem;
+  }
+
+  .highlight-card {
+    padding: 1rem;
+  }
+
+  .stats-strip {
+    margin-top: 0.25rem;
+  }
+
+  .stat-card,
+  .story-panel,
+  .story-points article,
+  .audience-card,
+  .principle-card,
+  .community-item,
+  .benefit-item,
+  .signup-card,
+  .collage-note {
+    padding: 1rem;
   }
 
   .highlight-card,
@@ -854,6 +954,12 @@
   .signup-card,
   .collage-note {
     border-radius: 1.2rem;
+  }
+
+  .section-intro h2,
+  .community-copy h2,
+  .waitlist-copy h2 {
+    font-size: clamp(1.9rem, 9vw, 2.5rem);
   }
 }
 

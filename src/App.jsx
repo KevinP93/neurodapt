@@ -210,6 +210,8 @@ function App() {
               <img
                 src={neuronImage}
                 alt="Glowing neuron illustration used as a premium visual metaphor for connected support and focus"
+                loading="eager"
+                fetchPriority="high"
               />
             </article>
 
