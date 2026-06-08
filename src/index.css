@@ -33,6 +33,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -41,11 +42,13 @@ body {
   min-height: 100vh;
   background: transparent;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #root {
   width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
