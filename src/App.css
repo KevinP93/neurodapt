@@ -1069,10 +1069,20 @@
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-    align-items: center;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 3rem;
     padding-top: 3.1rem;
+  }
+
+  .hero-copy h1 {
+    max-width: 12.5ch;
+    font-size: clamp(2.7rem, 4.4vw, 4.05rem);
+    text-wrap: wrap;
+  }
+
+  .hero-body {
+    max-width: 32rem;
   }
 
   .hero-photo-card {
@@ -1117,13 +1127,26 @@
 }
 
 @media (min-width: 1100px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  }
+
+  .section-head {
+    max-width: none;
+  }
+
   .hero-body {
     max-width: 30rem;
   }
 
   .section-head h2,
   .contact-copy h2 {
-    max-width: 12ch;
+    max-width: 34rem;
+    text-wrap: wrap;
+  }
+
+  .story-section .section-head h2 {
+    max-width: 46rem;
   }
 }
 
