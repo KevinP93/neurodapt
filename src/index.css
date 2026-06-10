@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-body: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-  --font-heading: 'Space Grotesk', 'Trebuchet MS', sans-serif;
-  --color-ink: #17294a;
-  --color-muted: #556f96;
-  --color-accent: #1a73ff;
-  --color-accent-deep: #0f5bc6;
-  --color-background: #f6fbff;
+  --font-body: 'Outfit', 'Segoe UI', sans-serif;
+  --font-heading: 'Outfit', 'Trebuchet MS', sans-serif;
+  --color-ink: #314f6b;
+  --color-muted: #74889d;
+  --color-accent: #90c0ec;
+  --color-accent-deep: #5f83a8;
+  --color-background: #fbfcfd;
   --color-surface: #ffffff;
   font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-ink);
   background:
-    radial-gradient(circle at 14% 12%, rgba(107, 166, 255, 0.12), transparent 24rem),
-    radial-gradient(circle at 84% 10%, rgba(255, 202, 170, 0.18), transparent 20rem),
-    linear-gradient(180deg, #f9fcff 0%, #f3f9ff 46%, #eef6ff 100%);
+    radial-gradient(circle at 14% 12%, rgba(144, 192, 236, 0.16), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #f9fbfd 48%, #f3f7fa 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,14 +31,14 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
-  background: #f6fbff;
+  background: #fbfcfd;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f6fbff;
+  background: #fbfcfd;
   overflow-x: clip;
   overscroll-behavior-x: none;
   touch-action: pan-y pinch-zoom;
