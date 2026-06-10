@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const proofCards = [
@@ -148,6 +148,44 @@ function App() {
   const demoMode =
     typeof window !== 'undefined' &&
     ['localhost', '127.0.0.1'].includes(window.location.hostname)
+
+  useEffect(() => {
+    const revealNodes = Array.from(document.querySelectorAll('.reveal'))
+
+    if (revealNodes.length === 0) {
+      return undefined
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+
+    if (prefersReducedMotion) {
+      revealNodes.forEach((node) => node.classList.add('is-visible'))
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        })
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    )
+
+    revealNodes.forEach((node) => observer.observe(node))
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleChange = (event) => {
     const { name, value } = event.target
