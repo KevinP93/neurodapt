@@ -87,6 +87,14 @@ const contactLinks = [
   },
 ]
 
+const navLinks = [
+  { href: '#story', label: 'Story' },
+  { href: '#product', label: 'Product' },
+  { href: '#pilot', label: 'Pilot' },
+  { href: '#team', label: 'Team' },
+  { href: '#contact', label: 'Contact' },
+]
+
 function App() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -96,6 +104,7 @@ function App() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const demoMode =
     typeof window !== 'undefined' &&
@@ -160,16 +169,59 @@ function App() {
         </a>
 
         <nav className="site-nav" aria-label="Primary">
-          <a href="#story">Story</a>
-          <a href="#product">Product</a>
-          <a href="#pilot">Pilot</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
+          {navLinks.map((item) => (
+            <a href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
-        <a className="button button-secondary header-cta" href="#contact">
-          Join updates
-        </a>
+        <div className="header-actions">
+          <button
+            className={`menu-toggle${menuOpen ? ' is-open' : ''}`}
+            type="button"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen((current) => !current)}
+          >
+            <span className="menu-toggle-label">Menu</span>
+            <span className="menu-toggle-icon" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+          </button>
+
+          <a className="button button-secondary header-cta" href="#contact">
+            Join updates
+          </a>
+        </div>
+
+        <div
+          className={`mobile-nav-panel${menuOpen ? ' is-open' : ''}`}
+          id="mobile-navigation"
+        >
+          <nav className="mobile-nav" aria-label="Mobile">
+            {navLinks.map((item) => (
+              <a
+                className="mobile-nav-link"
+                href={item.href}
+                key={item.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              className="button button-primary mobile-nav-cta"
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+            >
+              Join updates
+            </a>
+          </nav>
+        </div>
       </header>
 
       <main id="top">
