@@ -64,6 +64,43 @@ const teamMembers = [
   },
 ]
 
+const supporters = [
+  {
+    name: 'University of Strathclyde Inspire',
+    logo: '/assets/supporters/strathclyde-inspire.png',
+  },
+  {
+    name: 'UKRI Innovate UK',
+    logo: '/assets/supporters/ukri-innovate-uk.png',
+  },
+  {
+    name: 'STAC',
+    logo: '/assets/supporters/stac.png',
+  },
+  {
+    name: 'Scottish EDGE',
+    logo: '/assets/supporters/scottish-edge.webp',
+  },
+]
+
+const testimonials = [
+  {
+    quote:
+      'This will save me time and give me peace of mind knowing my pupils can take more ownership in their routines',
+    author: 'Will, Teacher',
+  },
+  {
+    quote:
+      'We can see how this would be an excellent tool as my daughter is neurodivergent. We keep her organised at the moment but something like this would boost confidence, independence and self esteem. Amazing job in inventing it!',
+    author: 'Vikki, Parent',
+  },
+  {
+    quote:
+      'I would simply encourage you to pursue the idea - the children have a lot to remember through the day, and a lot of belongings to keep track of. I would welcome anything that would help them!',
+    author: 'Harper, Parent',
+  },
+]
+
 const contactLinks = [
   {
     label: 'Email',
@@ -91,6 +128,8 @@ const navLinks = [
   { href: '#story', label: 'Story' },
   { href: '#product', label: 'Product' },
   { href: '#pilot', label: 'Pilot' },
+  { href: '#supporters', label: 'Supporters' },
+  { href: '#testimonials', label: 'Voices' },
   { href: '#team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -356,6 +395,52 @@ function App() {
                 <span>Get-started guide</span>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section className="section supporters-section" id="supporters">
+          <div className="section-head reveal">
+            <p className="eyebrow">Supporters and partners</p>
+            <h2>Backed by organisations helping Neurodapt move from idea to reality.</h2>
+          </div>
+
+          <div className="supporters-layout reveal reveal-delay-1">
+            <article className="surface-card supporters-proof">
+              <p className="card-tag">Early signal</p>
+              <strong>Trialled with and approved by over 100 pupils</strong>
+              <p>
+                Support from schools, startup networks, and innovation programmes
+                is helping shape the next stage.
+              </p>
+            </article>
+
+            <div className="supporters-grid" aria-label="Supporters">
+              {supporters.map((supporter) => (
+                <article className="surface-card supporter-card" key={supporter.name}>
+                  <img src={supporter.logo} alt={`${supporter.name} logo`} />
+                  <span>{supporter.name}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section testimonials-section" id="testimonials">
+          <div className="section-head reveal">
+            <p className="eyebrow">What people said</p>
+            <h2>Feedback from parents and teachers already shaping the product.</h2>
+          </div>
+
+          <div className="testimonials-grid reveal reveal-delay-1">
+            {testimonials.map((item) => (
+              <article className="surface-card testimonial-card" key={item.author}>
+                <p className="testimonial-mark" aria-hidden="true">
+                  "
+                </p>
+                <blockquote>{item.quote}</blockquote>
+                <p className="testimonial-author">{item.author}</p>
+              </article>
+            ))}
           </div>
         </section>
 

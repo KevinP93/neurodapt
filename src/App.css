@@ -331,6 +331,8 @@
 .story-section,
 .product-section,
 .pilot-section,
+.supporters-section,
+.testimonials-section,
 .team-section,
 .contact-section {
   padding-top: 3rem;
@@ -411,6 +413,8 @@
 .proof-grid,
 .story-grid,
 .pilot-grid,
+.supporters-grid,
+.testimonials-grid,
 .team-grid,
 .contact-grid {
   display: grid;
@@ -499,6 +503,7 @@
 .story-grid,
 .product-layout,
 .pilot-grid,
+.supporters-layout,
 .team-layout,
 .contact-layout {
   margin-top: 1.2rem;
@@ -507,6 +512,9 @@
 .story-card,
 .product-panel,
 .pilot-card,
+.supporters-proof,
+.supporter-card,
+.testimonial-card,
 .team-card,
 .contact-card,
 .address-card,
@@ -640,6 +648,95 @@
   padding: 0.9rem 1rem;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.supporters-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.supporters-proof {
+  display: grid;
+  gap: 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 252, 0.94)),
+    radial-gradient(circle at 100% 0%, rgba(144, 192, 236, 0.16), transparent 10rem);
+}
+
+.supporters-proof strong {
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  line-height: 1.2;
+}
+
+.supporters-proof p:last-child {
+  margin: 0;
+}
+
+.supporters-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.supporter-card {
+  display: grid;
+  place-items: center;
+  gap: 0.8rem;
+  min-height: 8.5rem;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 252, 0.94)),
+    radial-gradient(circle at 100% 0%, rgba(144, 192, 236, 0.12), transparent 8rem);
+}
+
+.supporter-card img {
+  width: 100%;
+  max-width: 11rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.supporter-card span {
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.testimonials-grid {
+  margin-top: 1.2rem;
+}
+
+.testimonial-card {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 252, 0.94)),
+    radial-gradient(circle at 100% 0%, rgba(144, 192, 236, 0.12), transparent 10rem);
+}
+
+.testimonial-mark {
+  margin: 0;
+  color: rgba(95, 131, 168, 0.4);
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  line-height: 0.8;
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  margin: 0;
+  color: var(--color-accent-deep);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .team-grid {
@@ -855,6 +952,7 @@
 
   .story-grid,
   .pilot-grid,
+  .testimonials-grid,
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -911,6 +1009,8 @@
   .proof-grid,
   .story-grid,
   .pilot-grid,
+  .supporters-grid,
+  .testimonials-grid,
   .team-grid,
   .contact-grid {
     gap: 0.75rem;
@@ -987,6 +1087,15 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .supporters-layout {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: stretch;
+  }
+
+  .supporters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .product-layout,
   .team-layout,
   .contact-layout {
@@ -1000,6 +1109,10 @@
 
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
