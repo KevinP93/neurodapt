@@ -198,11 +198,22 @@ function App() {
           </a>
         </div>
 
+        <button
+          className={`mobile-nav-backdrop${menuOpen ? ' is-open' : ''}`}
+          type="button"
+          aria-label="Close menu"
+          onClick={() => setMenuOpen(false)}
+        />
+
         <div
           className={`mobile-nav-panel${menuOpen ? ' is-open' : ''}`}
           id="mobile-navigation"
         >
           <nav className="mobile-nav" aria-label="Mobile">
+            <div className="mobile-nav-top">
+              <p>Navigate</p>
+              <span>Quick links</span>
+            </div>
             {navLinks.map((item) => (
               <a
                 className="mobile-nav-link"
@@ -228,10 +239,10 @@ function App() {
         <section className="section hero-section">
           <div className="hero-copy reveal">
             <p className="eyebrow">Thrive your way</p>
-            <h1>Focused support for everyday independence</h1>
+            <h1>A calmer way to build independence</h1>
             <p className="hero-body">
-              A focused to-do device that children can use with confidence and
-              that parents can trust and support remotely.
+              A focused to-do device for children, with trusted remote support
+              for parents.
             </p>
 
             <div className="hero-actions">
@@ -260,11 +271,6 @@ function App() {
                 alt="Child testing the Neurodapt concept in a classroom setting"
                 loading="eager"
                 fetchPriority="high"
-              />
-              <img
-                className="hero-squiggle"
-                src="/assets/graphics/squiggle-blue.png"
-                alt=""
               />
               <div className="hero-photo-copy">
                 <p>Building independence through a focused device.</p>
